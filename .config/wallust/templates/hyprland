@@ -1,0 +1,14 @@
+general {
+    # Here we use `saturate` filter to have more vibrant colors,
+    # not matter the scheme, since the border should seek the attention
+    gaps_in = 5
+    gaps_out = 10
+    border_size = 2
+    resize_on_border = false
+    allow_tearing = false
+    layout = dwindle
+    col.active_border = rgb({{color1 | strip}}) rgb({{color2 | strip}}) rgb({{color3 | strip}}) rgb({{color4 | strip}}) rgb({{color5 | strip}}) rgb({{color6 | strip}})
+    # color0 is almost the same as the background color,
+    # by putting ee as the alpha, it makes it 100% transparent
+    col.inactive_border = rgba({{color4 | strip}}ee)
+}

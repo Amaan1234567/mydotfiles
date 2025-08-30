@@ -1,0 +1,106 @@
+
+
+* {
+    background-color: transparent;
+    text-color:       white;
+}
+
+window {
+    fullscreen:       false;
+    background-color: black/20%;
+    padding:          10px;
+    children:         [ wrap, listview-split];
+    width: 80%;
+    height: 80%;
+    border-color: lightblue;
+    border: 3px;
+    border-radius: 1em;
+    padding:2em;
+}
+
+
+/** We add an extra child to this if PREVIEW=true */
+listview-split {
+  orientation: vertical;
+  spacing: 10em;
+  children: [listview];
+}
+
+wrap {
+    expand: false;
+    orientation: horizontal;
+    children: [ inputbar, message ];
+    border-color: lightblue;
+    border: 3px;
+    border-radius: 0.4em;
+    margin-bottom:20px;
+}
+
+icon-ib {
+    expand: false;
+    filename: "system-search";
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    size: 1em;
+}
+inputbar {
+    spacing: 0.4em;
+    padding: 0.4em;
+    children: [ entry ];
+}
+entry {
+    placeholder: "Search";
+    placeholder-color: grey;
+}
+message {
+    background-color: red/20%;
+    border-color: lightsalmon;
+    border: 3px 0px 0px 0px;
+    
+}
+listview{
+    orientation:horizontal;
+    columns:                     4;
+    lines:                       1;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    spacing:2em;
+}
+
+element {
+  children: [element-icon,element-text];
+  orientation:vertical;
+  padding:0px;
+  margin:0px;
+}
+element-icon {
+    padding:0px;
+    margin:0px;
+    orientation:horizontal;
+    size:20em;
+    expand:true;
+    vertical-align: 0.5;
+    horizontal-align:0.5;
+    border: 3px;
+    border-radius: 1em;
+}
+
+element-text {
+    expand:false;
+    font-family: "JetBrainsMono Nerd Font";
+    padding: 1em ;
+    vertical-align: 0.5;
+    horizontal-align:0.5;
+    
+}
+
+
+element selected {
+    border-color: lightblue;
+    border: 3px;
+    border-radius: 1em;
+}

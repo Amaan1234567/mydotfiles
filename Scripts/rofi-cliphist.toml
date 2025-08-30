@@ -1,0 +1,23 @@
+[rofi]
+path = "/usr/bin/rofi"
+
+[cliphist]
+path = "/usr/bin/cliphist"
+
+[clipboard]
+path = "/usr/bin/wl-copy"
+
+[text_mode_config]
+title = "Text"
+shortcut = "Alt+t"
+description = "Switch to text mode"
+
+[image_mode_config]
+title = "Image"
+shortcut = "Alt+i"
+description = "Switch to image mode!"
+
+[delete_mode_config]
+title = "Delete"
+shortcut = "Alt+d"
+description = "Delete entry"

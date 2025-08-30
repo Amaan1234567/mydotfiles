@@ -1,0 +1,24 @@
+# Let's keep good old pywal look and feel
+backend = "wal"
+color_space = "lchmixed" # idc about this one..
+#threshold =20 # neither about this, since I read wallust does it automagically..
+# classic look
+palette = "dark"
+# let's keep the contrast very very very clear.
+check_contrast = true
+fallback_generator = "interpolate"
+
+[templates]
+waybar = { template = 'waybar', dst = "~/.config/waybar/colors.css" }
+wlogout = { template = 'wlogout', dst = "~/.config/wlogout/style.css" }
+hyprland = {template = 'hyprland',dst = "~/.config/hypr/colors.conf"}
+cava = {template = 'cava', dst = "~/.config/cava/config"}
+rog = {template = 'rog', dst = "~/rog_colors.txt"}
+swaync = {template = 'swaync' , dst = "~/.config/swaync/colors.css"}
+rofi_wallpaper_selct = {template = 'rofi_wallpaper', dst= "~/.config/rofi/gen_theme.rasi"}
+rofi_drun = {template = 'rofi_drun',dst = "~/.config/rofi/drun_theme.rasi"}
+hyprlock = {template = 'hyprlock', dst = "~/.config/hypr/hyprlock.conf"}
+pywalfox = {template = 'wal',dst = "~/.cache/wal/colors.json"}
+fabric = { template = 'waybar', dst = "~/Documents/fabric-bar/colors.css" }
+vencord =  { template = 'vencord',dst = "~/.var/app/dev.vencord.Vesktop/config/vesktop/themes/SystemColor.theme.css"}
+kitty = { template='kitty', dst='~/.config/kitty/kitty-colors.conf'}
