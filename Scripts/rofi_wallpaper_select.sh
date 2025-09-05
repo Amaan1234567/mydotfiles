@@ -1,6 +1,6 @@
 #!/bin/bash
 # Replace with your actual absolute path
-path="~/Pictures/backgrounds/"
+path="/home/amaan/Pictures/backgrounds/"
 
 files="";
 filenames=""
@@ -27,7 +27,7 @@ echo -e "$filenames";
 x=$(seq 0 .01 1 | shuf | head -n1);
 y=$(seq 0 .01 1 | shuf | head -n1);
 wall=$(echo -e "$files" | rofi -dmenu -show-icons -theme gen_theme.rasi \
-    -p "Select Wallpaper" -preview-cmd '~/Scripts/make_thumb.sh "{input}" "{output}" ')
+    -p "Select Wallpaper" -preview-cmd '/home/amaan/Scripts/make_thumb.sh "{input}" "{output}" ')
 
 if [ -z "$wall" ]; then
     exit 0
@@ -38,6 +38,7 @@ else
     pywalfox update
     swww img --transition-type grow --transition-pos "$x","$y" --transition-step 25 --transition-fps 144 --transition-duration 1.5 "$fullpath"
     asusctl aura static -c "$(cat ~/rog_colors.txt)"
+    swaync-client -rs
     THUMBNAIL="/tmp/wallpaper_thumb.png"
     convert "$fullpath" -resize 1280x720 "$THUMBNAIL"
     #notify-send "Wallpaper Changed" "New wallpaper: $(basename "$wall")" -i "$THUMBNAIL"

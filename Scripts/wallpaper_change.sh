@@ -18,7 +18,10 @@ if [[ -n "$WALLPAPER" ]]; then
     swww img -o HDMI-A-1 --transition-type outer --transition-pos "$x","$y" --transition-step 60 --transition-duration 1.5 --transition-fps 60 "$WALLPAPER"
     convert "$WALLPAPER" -resize 1280x720 "$THUMBNAIL"
     asusctl aura static -c $(cat ~/rog_colors.txt)
+    # Send notification with thumbnail using swaync
+    swaync-client -rs
     #notify-send "Wallpaper Changed" "New wallpaper: $(basename "$WALLPAPER")" -i "$THUMBNAIL"
     notify-send --hint=string:image-path:$THUMBNAIL  "Wallpaper changed" "Wallpaper changed to $(basename "$WALLPAPER")"
-    
+    # Any other commands that need the wallpaper path can go here
+    echo "$(date) - Changed wallpaper to: $wallpaper" >> $HOME/wallpaper_log.txt
 fi
