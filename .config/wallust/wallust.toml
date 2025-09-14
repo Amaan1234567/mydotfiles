@@ -1,6 +1,6 @@
 # Let's keep good old pywal look and feel
 backend = "wal"
-color_space = "lchmixed" # idc about this one..
+color_space = "labmixed" # idc about this one..
 #threshold =20 # neither about this, since I read wallust does it automagically..
 # classic look
 palette = "dark"
@@ -19,6 +19,6 @@ rofi_wallpaper_selct = {template = 'rofi_wallpaper', dst= "~/.config/rofi/gen_th
 rofi_drun = {template = 'rofi_drun',dst = "~/.config/rofi/drun_theme.rasi"}
 hyprlock = {template = 'hyprlock', dst = "~/.config/hypr/hyprlock.conf"}
 pywalfox = {template = 'wal',dst = "~/.cache/wal/colors.json"}
-fabric = { template = 'waybar', dst = "~/Documents/fabric-bar/colors.css" }
+fabric = { template = 'waybar', dst = "~/Documents/fabric-bar/styles/colors.css" }
 vencord =  { template = 'vencord',dst = "~/.var/app/dev.vencord.Vesktop/config/vesktop/themes/SystemColor.theme.css"}
 kitty = { template='kitty', dst='~/.config/kitty/kitty-colors.conf'}

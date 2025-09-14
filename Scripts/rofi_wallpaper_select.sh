@@ -38,7 +38,7 @@ else
     pywalfox update
     swww img --transition-type grow --transition-pos "$x","$y" --transition-step 25 --transition-fps 144 --transition-duration 1.5 "$fullpath"
     asusctl aura static -c "$(cat ~/rog_colors.txt)"
-    swaync-client -rs
+    #swaync-client -rs
     THUMBNAIL="/tmp/wallpaper_thumb.png"
     convert "$fullpath" -resize 1280x720 "$THUMBNAIL"
     #notify-send "Wallpaper Changed" "New wallpaper: $(basename "$wall")" -i "$THUMBNAIL"
