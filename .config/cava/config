@@ -233,11 +233,11 @@ framerate = 144
 # You can define as many as 8 different colors. They range from bottom to top of screen
 gradient = 1
 
-gradient_color_1 = '#544B6F'
-gradient_color_2 = '#AB628C'
-gradient_color_3 = '#2E95D6'
-gradient_color_4 = '#8097D7'
-gradient_color_5 = '#D6B1E3'
+gradient_color_1 = '#56565D'
+gradient_color_2 = '#7D6757'
+gradient_color_3 = '#867779'
+gradient_color_4 = '#AF7F67'
+gradient_color_5 = '#BC9E93'
 
 
 

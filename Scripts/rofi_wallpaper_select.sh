@@ -1,6 +1,6 @@
 #!/bin/bash
 # Replace with your actual absolute path
-path="/home/amaan/Pictures/backgrounds/"
+path="$HOME/Pictures/backgrounds/"
 
 files="";
 filenames=""
