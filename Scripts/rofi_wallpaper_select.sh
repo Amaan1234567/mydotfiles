@@ -16,7 +16,6 @@ for file in "$path"*.jpg "$path"*.png "$path"*.jpeg; do
     fi
     i=$((i+1))
 done
-files = echo "$files"
 if [ -z "$files" ]; then
     notify-send "No images found" "Check your wallpaper directory: $path"
     exit 1

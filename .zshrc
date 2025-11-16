@@ -79,7 +79,7 @@ export GDK_BACKEND=wayland
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -133,5 +133,5 @@ unset __conda_setup
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH=$HOME/.local/bin:$PATH
-
+export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$PATH:/home/amaan/.spicetify
