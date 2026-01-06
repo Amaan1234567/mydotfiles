@@ -41,5 +41,5 @@ else
     THUMBNAIL="/tmp/wallpaper_thumb.png"
     convert "$fullpath" -resize 1280x720 "$THUMBNAIL"
     #notify-send "Wallpaper Changed" "New wallpaper: $(basename "$wall")" -i "$THUMBNAIL"
-    notify-send --hint=string:image-path:$THUMBNAIL  "Wallpaper changed" "Wallpaper changed to $(basename "$wall")"
+    notify-send --hint=string:image-path:$fullpath  "Wallpaper changed" "Wallpaper changed to $(basename "$wall")"
 fi

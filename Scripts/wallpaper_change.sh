@@ -21,7 +21,7 @@ if [[ -n "$WALLPAPER" ]]; then
     # Send notification with thumbnail using swaync
     #swaync-client -rs
     #notify-send "Wallpaper Changed" "New wallpaper: $(basename "$WALLPAPER")" -i "$THUMBNAIL"
-    notify-send --hint=string:image-path:$THUMBNAIL  "Wallpaper changed" "Wallpaper changed to $(basename "$WALLPAPER")"
+    notify-send --hint=string:image-path:"$WALLPAPER"  "Wallpaper changed" "Wallpaper changed to $(basename "$WALLPAPER")"
     # Any other commands that need the wallpaper path can go here
     echo "$(date) - Changed wallpaper to: $wallpaper" >> $HOME/wallpaper_log.txt
 fi
