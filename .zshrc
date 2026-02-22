@@ -134,4 +134,3 @@ unset __conda_setup
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$PATH:/home/amaan/.spicetify
