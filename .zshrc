@@ -1,4 +1,4 @@
-
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 # $(kitty +kitten themes Custom-Theme)
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
