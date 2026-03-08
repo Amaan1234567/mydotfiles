@@ -2,17 +2,17 @@
 
 * {
     background-color: transparent;
-    text-color:       #EAF6F2;
+    text-color:       #E5E7ED;
 }
 
 window {
     fullscreen:       false;
-    background-color: #1C201F80;
+    background-color: #00000380;
     padding:          10px;
     children:         [ listview-split];
     width: 80%;
     height: 80%;
-    border-color: #C4E6DA;
+    border-color: #B6B9CB;
     border: 3px;
     border-radius: 1em;
     padding:2em;
@@ -30,7 +30,7 @@ wrap {
     expand: false;
     orientation: horizontal;
     children: [ inputbar, message ];
-    border-color: #C4E6DA;
+    border-color: #B6B9CB;
     border: 3px;
     border-radius: 0.4em;
     margin-bottom:20px;
@@ -89,11 +89,11 @@ element-text {
     padding: 1em ;
     vertical-align: 0.5;
     horizontal-align:0.5;
-    background-color: #8D9A751A;
+    background-color: #B173991A;
     
 }
 
 
 element selected {
-    border-color: #C4E6DA;
+    border-color: #B6B9CB;
 }
