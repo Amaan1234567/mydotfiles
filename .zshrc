@@ -134,3 +134,6 @@ unset __conda_setup
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
+
+export JAVA_HOME="/usr/lib/jvm/java-21-openjdk"
+export PATH="$JAVA_HOME/bin:$PATH"

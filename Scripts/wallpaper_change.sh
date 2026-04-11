@@ -17,7 +17,7 @@ if [[ -n "$WALLPAPER" ]]; then
     pywalfox update
     swww img -o HDMI-A-1 --transition-type outer --transition-pos "$x","$y" --transition-step 60 --transition-duration 1.25 --transition-fps 100 "$WALLPAPER"
     convert "$WALLPAPER" -resize 1280x720 "$THUMBNAIL"
-    asusctl aura static -c $(cat ~/rog_colors.txt)
+    asusctl aura effect static -c $(cat ~/rog_colors.txt)
     # Send notification with thumbnail using swaync
     #swaync-client -rs
     #notify-send "Wallpaper Changed" "New wallpaper: $(basename "$WALLPAPER")" -i "$THUMBNAIL"
