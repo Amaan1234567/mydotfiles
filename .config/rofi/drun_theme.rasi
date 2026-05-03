@@ -5,7 +5,7 @@
 
 * {
     font-family: "JetBrainsMono Nerd Font";
-    background-color: #29242400; 
+    background-color: #21212500; 
 }
 
 prompt{
@@ -22,7 +22,7 @@ configuration {
 window
 {
     padding:0px;
-    background-color: #292424CC;
+    background-color: #212125CC;
     border: 4px;
     border-radius: 10px;
     width:45%;
@@ -45,7 +45,7 @@ element
 
 element selected
 {
-    background-color: #F18D5C;
+    background-color: #8A82A0;
     horizontal-align: 0;
 }
 
@@ -56,7 +56,7 @@ element-icon selected
 }
 
 element-text selected{
-    text-color : #292424;
+    text-color : #212125;
 }
 mainbox {
     padding: 10px;
@@ -67,16 +67,16 @@ mainbox {
 inputbar {
     padding:    1px ;
     spacing:    0px ;
-    text-color: #B97B6A;
+    text-color: #6F899F;
     children:   [ "prompt","textbox-prompt-colon","entry"];
 }
 
 case-indicator {
     spacing:    0;
-    text-color: #B97B6A;
+    text-color: #6F899F;
 }
 entry {
-    text-color:        #B97B6A;
+    text-color:        #6F899F;
     cursor:            text;
     spacing:           0;
     placeholder-color: Gray;
@@ -84,7 +84,7 @@ entry {
 }
 prompt {
     spacing:    0;
-    text-color: #B97B6A;
+    text-color: #6F899F;
 }
 textbox-prompt-colon {
     margin:     0px 0.3000em 0.0000em 0.0000em ;
@@ -98,12 +98,12 @@ scrollbar {
     padding:      0;
     handle-width: 8px ;
     border:       0;
-    handle-color: #FDF5DC;
+    handle-color: #F2D2D8;
 }
 
 element-text
 {
-    text-color: #B97B6A;
+    text-color: #6F899F;
     background-color: transparent;
 }
 element-icon
