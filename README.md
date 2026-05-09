@@ -11,6 +11,7 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 stow .
 mkdir ~/Pictures/backgrounds
+mkdir ~/Pictures/screenshots
 ```
 Note: for background selector and random wallpaper change to work please put wallpapers in ~/Pictures/backgrounds folder
 
