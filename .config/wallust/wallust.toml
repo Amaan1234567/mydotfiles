@@ -6,11 +6,9 @@ color_space = "labmixed" # idc about this one..
 palette = "dark"
 # let's keep the contrast very very very clear.
 check_contrast = true
-fallback_generator = "interpolate"
+fallback_generator = "complementary"
 
 [templates]
-waybar = { template = 'waybar', dst = "~/.config/waybar/colors.css" }
-wlogout = { template = 'wlogout', dst = "~/.config/wlogout/style.css" }
 hyprland = {template = 'hyprland',dst = "~/.config/hypr/colors.conf"}
 cava = {template = 'cava', dst = "~/.config/cava/config"}
 rog = {template = 'rog', dst = "~/rog_colors.txt"}
