@@ -9,7 +9,7 @@ check_contrast = true
 fallback_generator = "complementary"
 
 [templates]
-hyprland = {template = 'hyprland',dst = "~/.config/hypr/colors.conf"}
+hyprland = {template = 'hyprland',dst = "~/.config/hypr/colors.lua"}
 cava = {template = 'cava', dst = "~/.config/cava/config"}
 rog = {template = 'rog', dst = "~/rog_colors.txt"}
 #swaync = {template = 'swaync' , dst = "~/.config/swaync/colors.css"}
