@@ -18,8 +18,8 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("dbus-update-activation-environment --systemd --all")
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets,ssh")
-    hl.exec_cmd("hypridle")
     hl.exec_cmd("swww-daemon")
+    hl.exec_cmd("hypridle")
     hl.exec_cmd("/home/amaan/Documents/fabric-bar/scripts/start.sh")
     hl.exec_cmd("/home/amaan/Scripts/wallpaper_loop.sh")
     hl.exec_cmd("asusctl aura static -c $(cat ~/rog_colors.txt)")
@@ -32,7 +32,6 @@ hl.env("SSH_AUTH_SOCK", "$XDG_RUNTIME_DIR/keyring/ssh")
 hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
--- hl.env("PATH", "$PATH:$scrPath")
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
@@ -261,9 +260,41 @@ hl.bind("ALT + left",hl.dsp.exec_cmd("asusctl aura effect --next-mode"))
 hl.bind("ALT + right",hl.dsp.exec_cmd("asusctl aura effect --prev-mode"))
 
 
+-- hl.window_rule({
+--     match= {class="code"},
+--     fullscreen_state=1,
+-- })
+
+local suppressMaximizeRule = hl.window_rule({
+    -- Ignore maximize requests from all apps. You'll probably like this.
+    name  = "suppress-maximize-events",
+    match = { class = ".*" },
+
+    suppress_event = "maximize",
+})
+-- suppressMaximizeRule:set_enabled(false)
+
 hl.window_rule({
-    match= {class="code"},
-    fullscreen_state=1,
+    -- Fix some dragging issues with XWayland
+    name  = "fix-xwayland-drags",
+    match = {
+        class      = "^$",
+        title      = "^$",
+        xwayland   = true,
+        float      = true,
+        fullscreen = false,
+        pin        = false,
+    },
+
+    no_focus = true,
+})
+
+hl.window_rule({
+    match = {
+        class = "*"
+    },
+    opacity = "0.8 override",
+    animation = "popin 85%"
 })
 
 local layer_names = {
