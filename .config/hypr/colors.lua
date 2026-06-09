@@ -4,8 +4,8 @@ hl.config({
         gaps_out = 10,
         border_size = 2,
         col = {
-            active_border = {colors = { "rgba(767F69ee)", "rgba(4D7DB7ee)" ,"rgba(88794Cee)","rgba(75A4CBee)" ,"rgba(D2BA4Aee)" ,"rgba(D4CAC8ee)" }},
-            inactive_border = "rgba(75A4CBee)"
+            active_border = {colors = { "rgba(516E88ee)", "rgba(7B72ABee)" ,"rgba(B27AA2ee)","rgba(C372D5ee)" ,"rgba(E46A97ee)" ,"rgba(F2ACD2ee)" }},
+            inactive_border = "rgba(C372D5ee)"
 
         }
     }
