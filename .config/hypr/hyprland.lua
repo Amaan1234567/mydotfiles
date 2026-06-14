@@ -307,7 +307,8 @@ local layer_names = {
     "brightness_osd",
     "logout_popup",
     "theme_selector",
-    "fabric-audio-popup"
+    "fabric-audio-popup",
+    "fabric-clock-popup"
 }
 
 for index, value in ipairs(layer_names) do
