@@ -184,6 +184,19 @@ local menu = "rofi -show drun -theme drun_theme"
 local editor = "code"
 local browser = "firefox"
 
+-- Alt-Tab window switcher
+-- hl.bind("ALT",hl.dsp.exec_cmd("fabric-cli invoke-action hypr-fabric-bar-main alt-tab-activate && notify-send \"New Message\" \"User123: Hello\" --action=\"reply=Reply\""))
+-- hl.bind("ALT", function()
+--     hl.dispatch(hl.dsp.exec_cmd("fabric-cli invoke-action hypr-fabric-bar-main alt-tab-cancel && notify-send \"New Message\" \"User123: Hello\" --action=\"reply=Reply\""))
+-- end, { release = true })
+
+-- hl.bind("ALT",hl.dsp.exec_cmd("fabric-cli invoke-action hypr-fabric-bar-main alt-tab-cancel && notify-send \"New Message\" \"User123: Hello\" --action=\"reply=Reply\""),{release = true, transparent = true})
+-- hl.bind("ALT + TAB",         hl.dsp.exec_cmd("fabric-cli invoke-action hypr-fabric-bar-main alt-tab-next"),     {repeat_on_hold = true})
+-- hl.bind("ALT + SHIFT + TAB", hl.dsp.exec_cmd("fabric-cli invoke-action hypr-fabric-bar-main alt-tab-prev"),     {repeat_on_hold = true})
+
+-- ALT press (alone) → show overlay
+hl.bind("ALT + TAB",         hl.dsp.exec_cmd("fabric-cli invoke-action hypr-fabric-bar-main alt-tab-next"),     {repeat_on_hold = true})
+-- ALT release → activate selected window
 hl.bind("SUPER + Q",hl.dsp.window.close())
 hl.bind(string.format("%s + DELETE",mainmod),hl.dsp.exit())
 hl.bind(string.format("%s + SHIFT + W",mainmod),hl.dsp.exec_cmd("fabric-cli invoke-action hypr-fabric-bar-main toggle-wallpaper-selector"))
@@ -229,27 +242,26 @@ for i = 1, 10, 1 do
     end
 end
 
-
 hl.bind(string.format("%s + S",mainmod),hl.dsp.workspace.toggle_special("background"))
 hl.bind(string.format("%s + SHIFT + S",mainmod),hl.dsp.window.move({workspace="special:background"}))
 hl.bind(string.format("%s + mouse_down",mainmod),hl.dsp.focus({workspace="m + 1"}))
 hl.bind(string.format("%s + mouse_up",mainmod),hl.dsp.focus({workspace="m-1"}))
 hl.bind(string.format("%s + mouse:272",mainmod),hl.dsp.window.drag())
 hl.bind(string.format("%s + mouse:273",mainmod),hl.dsp.window.resize())
-hl.bind(string.format("XF86AudioRaiseVolume",mainmod),hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+ --limit 1.0"))
-hl.bind(string.format("XF86AudioLowerVolume",mainmod),hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%- --limit 1.0"))
+hl.bind(string.format("XF86AudioRaiseVolume",mainmod),hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+ --limit 1.0"),{repeating = true})
+hl.bind(string.format("XF86AudioLowerVolume",mainmod),hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%- --limit 1.0"), {repeating = true})
 hl.bind(string.format("XF86AudioMute",mainmod),hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 hl.bind(string.format("XF86AudioMicMute",mainmod),hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
-hl.bind(string.format("XF86MonBrightnessUp",mainmod),hl.dsp.exec_cmd("brightnessctl s 5%+"))
-hl.bind(string.format("XF86MonBrightnessDown",mainmod),hl.dsp.exec_cmd("brightnessctl s 5%-"))
+hl.bind(string.format("XF86MonBrightnessUp",mainmod),hl.dsp.exec_cmd("brightnessctl s 5%+"),{repeating = true})
+hl.bind(string.format("XF86MonBrightnessDown",mainmod),hl.dsp.exec_cmd("brightnessctl s 5%-"),{repeating = true})
 hl.bind(string.format("XF86AudioNext",mainmod),hl.dsp.exec_cmd("playerctl next"))
 hl.bind(string.format("XF86AudioPause",mainmod),hl.dsp.exec_cmd("playerctl play-pause"))
 hl.bind(string.format("XF86AudioPlay",mainmod),hl.dsp.exec_cmd("playerctl play-pause"))
 hl.bind(string.format("XF86AudioPrev",mainmod),hl.dsp.exec_cmd("playerctl previous"))
-hl.bind(string.format("%s + SHIFT + right",mainmod),hl.dsp.window.resize({x=10,y=0}))
-hl.bind(string.format("%s + SHIFT + left",mainmod),hl.dsp.window.resize({x=-10,y=0}))
-hl.bind(string.format("%s + SHIFT + up",mainmod),hl.dsp.window.resize({x=0,y=-10}))
-hl.bind(string.format("%s + SHIFT + down",mainmod),hl.dsp.window.resize({x=0,y=10}))
+hl.bind(string.format("%s + SHIFT + right",mainmod),hl.dsp.window.resize({x=50,y=0,relative=true}),{repeating = true})
+hl.bind(string.format("%s + SHIFT + left",mainmod),hl.dsp.window.resize({x=-50,y=0,relative=true}),{repeating = true})
+hl.bind(string.format("%s + SHIFT + up",mainmod),hl.dsp.window.resize({x=0,y=-50,relative=true}),{repeating = true})
+hl.bind(string.format("%s + SHIFT + down",mainmod),hl.dsp.window.resize({x=0,y=50,relative=true}),{repeating = true})
 hl.bind(string.format("%s + SHIFT + CTRL + left",mainmod),hl.dsp.window.move({direction="left",group_aware=true}))
 hl.bind(string.format("%s + SHIFT + CTRL + right",mainmod),hl.dsp.window.move({direction="right",group_aware=true}))
 hl.bind(string.format("%s + SHIFT + CTRL + up",mainmod),hl.dsp.window.move({direction="up",group_aware=true}))
@@ -260,6 +272,7 @@ hl.bind("ALT + left",hl.dsp.exec_cmd("asusctl aura effect --next-mode"))
 hl.bind("ALT + right",hl.dsp.exec_cmd("asusctl aura effect --prev-mode"))
 
 
+-- ALT_L release: handled by auto-activate timer (350ms)
 -- hl.window_rule({
 --     match= {class="code"},
 --     fullscreen_state=1,
@@ -308,7 +321,8 @@ local layer_names = {
     "logout_popup",
     "theme_selector",
     "fabric-audio-popup",
-    "fabric-clock-popup"
+    "fabric-clock-popup",
+    "fabric-alttab"
 }
 
 for index, value in ipairs(layer_names) do
