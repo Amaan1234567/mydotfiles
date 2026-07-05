@@ -15,7 +15,7 @@ background {
     brightness = 0.8000
     vibrancy = 0.2100
     vibrancy_darkness = 0.0
-    #reload_cmd = swww query | awk -F'image: ' '{print $2}'
+    #reload_cmd = awww query | awk -F'image: ' '{print $2}'
 }
 
 

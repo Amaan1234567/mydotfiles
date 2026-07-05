@@ -35,7 +35,7 @@ else
     # Replace these with your wallpaper-setting commands
     wallust run "$fullpath" -C ~/.config/wallust/wallust.toml -w
     pywalfox update
-    swww img --transition-type grow --transition-pos "$x","$y" --transition-step 25 --transition-fps 144 --transition-duration 1.5 "$fullpath"
+    awww img --transition-type grow --transition-pos "$x","$y" --transition-step 25 --transition-fps 144 --transition-duration 1.5 "$fullpath"
     asusctl aura static -c "$(cat ~/rog_colors.txt)"
     #swaync-client -rs
     THUMBNAIL="/tmp/wallpaper_thumb.png"
