@@ -22,10 +22,10 @@ COMMAND="$1"
 
 case "$COMMAND" in
     title)
-        output=$(playerctl metadata --format "{{ title }}" 2>/dev/null)
+        output=$(playerctl metadata --format "{{ title }}" 2>/dev/null | cut -c 1-20)
         ;;
     artist)
-        output=$(playerctl metadata --format "{{ xesam:artist }}" 2>/dev/null)
+        output=$(playerctl metadata --format "{{ xesam:artist }}" 2>/dev/null | cut -c 1-40)
         ;;
     length)
         meta=$(playerctl metadata --format "{{ mpris:length }}" 2>/dev/null | xargs)
@@ -45,14 +45,15 @@ case "$COMMAND" in
         ;;
     cover)
         # Retrieve album art URL (for Spotify, adjust as needed).
-        artUrl=$(playerctl -p spotify metadata --format "{{ mpris:artUrl }}" 2>/dev/null | xargs)
+        artUrl=$(playerctl metadata --format "{{ mpris:artUrl }}" 2>/dev/null | xargs)
         if [[ -z "$artUrl" ]]; then
-            output="/home/amaan/.cache/cover.jpeg"
+            output="/home/amaan/Pictures/blank.jpeg"
         else
             tmpfile="/home/amaan/.cache/cover.jpeg"
             # Download album art; use -L to follow any redirects.
             curl -sL "$artUrl" -o "$tmpfile"
             if [[ $? -eq 0 && -s "$tmpfile" ]]; then
+                magick "$tmpfile" -gravity center -extent "1:1" "$tmpfile"
                 output="$tmpfile"
             fi
         fi

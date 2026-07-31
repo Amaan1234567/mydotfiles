@@ -2,7 +2,7 @@ hl.monitor({
     output = "eDP-1",
     mode = "highrr",
     position = "auto",
-    scale = "1.25",
+    scale = "1.2",
 })
 
 hl.monitor({
@@ -182,7 +182,7 @@ local terminal = "kitty"
 local fileManager = "nautilus"
 local menu = "rofi -show drun -theme drun_theme"
 local editor = "code"
-local browser = "firefox"
+local browser = "google-chrome"
 
 -- Alt-Tab window switcher
 -- hl.bind("ALT",hl.dsp.exec_cmd("fabric-cli invoke-action hypr-fabric-bar-main alt-tab-activate && notify-send \"New Message\" \"User123: Hello\" --action=\"reply=Reply\""))
