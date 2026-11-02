@@ -10,7 +10,7 @@ return function()
     hl.monitor({
         output = "HDMI-A-1",
         mode = "1920x1080@100",
-        position = "auto",
+        position = "auto-left",
         scale = "1",
     })
 end
