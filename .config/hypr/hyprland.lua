@@ -112,7 +112,6 @@ load_override("theme", function()
             preserve_split = true,
             smart_split = false,
             smart_resizing = true,
-            special_scale_factor = 1,
             split_width_multiplier = 1.0,
             use_active_for_splits = true,
             default_split_ratio = 1.0,
@@ -129,16 +128,16 @@ load_override("theme", function()
         misc = {
             force_default_wallpaper = 0,
             disable_hyprland_logo = true,
-            vrr = 1,
-            mouse_move_enables_dpms = true,
-            key_press_enables_dpms = true,
+            -- vrr = 1,
+            -- mouse_move_enables_dpms = true,
+            -- key_press_enables_dpms = true,
             animate_manual_resizes = true,
             animate_mouse_windowdragging = true
         },
         xwayland = { force_zero_scaling = true },
         cursor = { no_hardware_cursors = true },
-        render = { new_render_scheduling = true },
-        debug = { vfr = true }
+        -- render = { new_render_scheduling = true },
+        -- debug = { vfr = true }
     })
 
     hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
@@ -197,6 +196,30 @@ load_override("rules", function()
     })
 end)
 
+local suppressMaximizeRule = hl.window_rule({
+    -- Ignore maximize requests from all apps. You'll probably like this.
+    name  = "suppress-maximize-events",
+    match = { class = ".*" },
+
+    suppress_event = "maximize",
+})
+-- suppressMaximizeRule:set_enabled(false)
+
+hl.window_rule({
+    -- Fix some dragging issues with XWayland
+    name  = "fix-xwayland-drags",
+    match = {
+        class      = "^$",
+        title      = "^$",
+        xwayland   = true,
+        float      = true,
+        fullscreen = false,
+        pin        = false,
+    },
+
+    no_focus = true,
+})
+
 load_override("keybinds", function()
     local mainmod = "SUPER"
     local terminal = "kitty"
@@ -207,15 +230,15 @@ load_override("keybinds", function()
 
     hl.bind("ALT + TAB", hl.dsp.exec_cmd("fabric-cli invoke-action hypr-fabric-bar-main alt-tab-next"),
         { repeat_on_hold = true })
-    hl.bind("SUPER + Q", hl.dsp.window.close())
-    hl.bind(string.format("%s + DELETE", mainmod), hl.dsp.exit())
     hl.bind(string.format("%s + SHIFT + W", mainmod),
         hl.dsp.exec_cmd("fabric-cli invoke-action hypr-fabric-bar-main toggle-wallpaper-selector"))
     hl.bind(string.format("%s + SHIFT + T", mainmod),
         hl.dsp.exec_cmd("fabric-cli invoke-action hypr-fabric-bar-main toggle-theme-selector"))
     hl.bind(string.format("%s + V", mainmod),
         hl.dsp.exec_cmd(
-        "rofi -modi clipboard:~/Scripts/cliphist-rofi-img.sh -theme drun_theme -show clipboard -show-icons"))
+            "rofi -modi clipboard:~/Scripts/cliphist-rofi-img.sh -theme drun_theme -show clipboard -show-icons"))
+    hl.bind("SUPER + Q", hl.dsp.window.close())
+    hl.bind(string.format("%s + DELETE", mainmod), hl.dsp.exit())
     hl.bind("SUPER  +  A", hl.dsp.exec_cmd(menu))
     hl.bind(string.format("%s + P", mainmod), hl.dsp.window.pseudo())
     hl.bind(string.format("%s + J", mainmod), hl.dsp.layout("togglesplit"))
