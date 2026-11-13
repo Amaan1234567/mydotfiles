@@ -8,7 +8,7 @@ return function()
     hl.window_rule({ match = { float = false, workspace = "f[1]s[false]" }, rounding = 0 })
 
     for i = 1, 5, 1 do
-        hl.workspace_rule({ workspace = string.format("%d", i), monitor = "HDMI-A-1" })
+        hl.workspace_rule({ workspace = string.format("%d", i), monitor = "DP-1" })
     end
 
     hl.window_rule({

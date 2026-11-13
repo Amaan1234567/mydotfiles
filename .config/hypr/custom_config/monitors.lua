@@ -13,4 +13,11 @@ return function()
         position = "auto-left",
         scale = "1",
     })
+
+    hl.monitor({
+        output = "DP-1",
+        mode = "1920x1080@100",
+        position = "auto-left",
+        scale = '1'
+    })
 end
