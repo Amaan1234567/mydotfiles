@@ -14,4 +14,5 @@ return function()
     -- hl.env("__VK_LAYER_NV_optimus", "NVIDIA_only")
     hl.env("PRIMARY_MONITOR_ID","1")
     hl.env("HYPRLAND_NO_RT", "1")
+    hl.env("SSH_AUTH_SOCK","$XDG_RUNTIME_DIR/gcr/ssh")
 end

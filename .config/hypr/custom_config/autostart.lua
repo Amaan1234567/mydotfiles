@@ -3,5 +3,7 @@ return function()
     hl.exec_cmd("asusctl aura static -c $(cat ~/rog_colors.txt)")
     hl.exec_cmd("easyeffects --gapplication-service")
     hl.exec_cmd("pywalfox start")
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP SSH_AUTH_SOCK")
+    hl.exec_cmd("gnome-keyring-daemon --start --components=pkcs11,secrets,ssh")
 end)
 end
