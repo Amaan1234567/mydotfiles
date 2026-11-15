@@ -5,5 +5,6 @@ return function()
     hl.exec_cmd("pywalfox start")
     hl.exec_once("systemctl --user import-environment SSH_AUTH_SOCK DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_once("dbus-update-activation-environment --systemd SSH_AUTH_SOCK DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    hl.exec_once("gnome-keyring-daemon --start --components=ssh")
 end)
 end
